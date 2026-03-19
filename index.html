@@ -12,7 +12,7 @@ body{font-size:16px;color:var(--black);line-height:1.8}
 a{text-decoration:none;color:inherit}
 img{max-width:100%}
 
-/* ── HEADER ── */
+/* HEADER */
 header{position:fixed;top:0;width:100%;height:72px;background:#fff;display:flex;justify-content:space-between;align-items:center;padding:0 3%;z-index:100;box-shadow:0 1px 6px rgba(0,0,0,.08)}
 .logo{display:flex;align-items:center;gap:12px}
 .logo img{height:44px;object-fit:contain}
@@ -23,78 +23,83 @@ nav ul li a:hover{opacity:.5}
 .header-cta{background:var(--black);color:#fff;padding:0 28px;height:72px;display:flex;align-items:center;font-weight:700;font-size:1.6rem;letter-spacing:2px;transition:.2s;white-space:nowrap}
 .header-cta:hover{opacity:.8}
 .sp-menu-btn{display:none;background:var(--black);width:56px;height:72px;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:6px}
-.sp-menu-btn span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+.sp-menu-btn span{display:block;width:24px;height:2px;background:#fff;border-radius:2px}
 
-/* ── HERO ── */
+/* HERO */
 #hero{position:relative;margin-top:72px}
 .hero-img{width:100%;height:calc(100vh - 72px);object-fit:cover;display:block}
-.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,.35);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 5%}
-.hero-main{color:#fff;font-size:4rem;font-weight:700;letter-spacing:8px;text-shadow:0 2px 12px rgba(0,0,0,.5);line-height:1.6;margin-bottom:16px}
+.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,.38);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 5%}
+.hero-main{color:#fff;font-size:4rem;font-weight:700;letter-spacing:8px;text-shadow:0 2px 12px rgba(0,0,0,.5);line-height:1.7;margin-bottom:16px}
 .hero-sub{color:#fff;font-size:1.6rem;font-weight:700;letter-spacing:3px;text-shadow:0 2px 8px rgba(0,0,0,.4)}
-.scroll-down{position:absolute;bottom:0;left:50%;transform:translateX(-50%);background:var(--black);color:#fff;padding:12px 40px;font-size:1.4rem;letter-spacing:2px;font-family:'Georgia',serif}
+.scroll-down{position:absolute;bottom:0;left:50%;transform:translateX(-50%);background:var(--black);color:#fff;padding:12px 40px;font-size:1.4rem;letter-spacing:2px}
 
-/* ── SECTION COMMON ── */
+/* SECTION */
 section{padding:80px 0}
 .sec-title{text-align:center;margin-bottom:48px}
-.sec-title .en{font-size:2.8rem;font-family:'Georgia',serif;letter-spacing:7px}
+.sec-title .en{font-size:2.8rem;letter-spacing:7px}
 .sec-title .ja{font-size:1.4rem;font-weight:700;letter-spacing:3px;margin-top:8px;color:#666}
 .inner{width:88%;max-width:1100px;margin:0 auto}
 
-/* ── ABOUT ── */
+/* ABOUT */
 #about{background:#fff}
 .about-text{font-size:1.9rem;font-weight:700;line-height:2.2;text-align:center}
 
-/* ── PEOPLE ── */
+/* PEOPLE */
 #people{background:var(--gray)}
 .people-list{display:flex;flex-direction:column;gap:72px}
 .people-item{display:flex;gap:5%;align-items:center}
 .people-item:nth-child(even) .people-img{order:2}
 .people-item:nth-child(even) .people-info{order:1}
-.people-img{flex:0 0 50%;aspect-ratio:4/3;overflow:hidden}
-.people-img img{width:100%;height:100%;object-fit:cover}
+.people-img{flex:0 0 50%;overflow:hidden}
+.people-img img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
 .people-info{flex:1}
 .people-pos{font-size:1.7rem;font-weight:700;letter-spacing:2px}
-.people-join{font-size:1.1rem;font-weight:700;color:#777;margin-top:2px;letter-spacing:1px}
+.people-join{font-size:1.1rem;font-weight:700;color:#777;margin-top:2px}
 .people-name{font-size:3rem;font-weight:700;letter-spacing:2px;line-height:1.8;margin-top:4px}
-.people-name-en{font-family:'Georgia',serif;font-size:1.2rem;letter-spacing:3px;color:#888;margin-top:2px}
+.people-name-en{font-size:1.2rem;letter-spacing:3px;color:#888;margin-top:2px}
 .people-desc{font-size:1.7rem;line-height:2;color:#444;margin-top:20px}
 
-/* ── JOBS ── */
+/* JOBS */
 #jobs{background:#fff}
 .jobs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.job-card{box-shadow:0 0 8px rgba(0,0,0,.1);transition:.2s;cursor:pointer;position:relative;padding-bottom:60px}
-.job-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.15)}
-.job-card-img{position:relative}
-.job-card-img img{width:100%;height:260px;object-fit:cover;display:block}
+.job-card{box-shadow:0 0 8px rgba(0,0,0,.1);transition:.3s;cursor:pointer;display:block;color:inherit;position:relative;padding-bottom:64px}
+.job-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.15);transform:translateY(-2px)}
+.job-card-img{position:relative;overflow:hidden}
+.job-card-img img{width:100%;height:240px;object-fit:cover;display:block;transition:.3s}
+.job-card:hover .job-card-img img{transform:scale(1.03)}
+.job-label{position:absolute;top:12px;left:12px;background:var(--black);color:#fff;font-size:1.1rem;font-weight:700;padding:4px 10px}
 .job-name{position:absolute;bottom:0;left:0}
-.job-name-en{color:#fff;font-size:1.1rem;padding:0 20px 4px;letter-spacing:2px}
-.job-name-ja{background:var(--black);color:#fff;font-size:2.2rem;font-weight:700;padding:12px 20px;display:inline-block}
+.job-name-en{color:#fff;font-size:1.1rem;padding:0 16px 4px;letter-spacing:2px;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+.job-name-ja{background:var(--black);color:#fff;font-size:2.2rem;font-weight:700;padding:10px 16px;display:inline-block}
 .job-body{padding:20px 20px 0}
 .job-desc{font-size:1.4rem;line-height:1.9;color:#555}
-.job-meta{position:absolute;bottom:16px;left:20px;right:20px;display:flex;gap:16px;font-size:1.2rem;color:#444}
-.job-meta span{display:flex;align-items:center;gap:4px}
-.jobs-cta{background:var(--black);color:#fff;display:flex;justify-content:center;align-items:center;padding:20px;font-size:2.6rem;font-family:'Georgia',serif;letter-spacing:6px;margin-top:40px;width:85%;max-width:800px;margin-left:auto;margin-right:auto;transition:.2s}
+.job-meta{position:absolute;bottom:16px;left:20px;right:20px;display:flex;gap:12px;font-size:1.2rem;color:#444;flex-wrap:wrap}
+.job-arrow{position:absolute;bottom:16px;right:16px;width:32px;height:32px;background:var(--black);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem}
+.jobs-cta{background:var(--black);color:#fff;display:flex;justify-content:center;align-items:center;padding:20px;font-size:2.4rem;letter-spacing:6px;margin:40px auto 0;width:85%;max-width:800px;transition:.2s}
 .jobs-cta:hover{opacity:.8}
 
-/* ── MESSAGE ── */
+/* MESSAGE */
 #message{background:var(--gray);padding:0 0 80px}
+.msg-sec-title{text-align:center;padding-top:80px;margin-bottom:48px}
+.msg-sec-title .en{font-size:2.8rem;letter-spacing:7px}
+.msg-sec-title .ja{font-size:1.4rem;font-weight:700;letter-spacing:3px;margin-top:8px;color:#666}
 .msg-hero img{width:100%;max-height:520px;object-fit:cover;display:block}
 .msg-box{width:85%;max-width:1100px;margin:-60px auto 0;background:var(--gray);padding:48px 5%;position:relative;z-index:1}
 .msg-role{font-size:1.4rem;font-weight:700}
 .msg-name{font-size:2rem;font-weight:700;margin-top:4px}
-.msg-headline{font-size:2.4rem;font-weight:700;line-height:1.9;margin-top:24px}
+.msg-headline{font-size:2.2rem;font-weight:700;line-height:1.9;margin-top:24px}
 .msg-body{font-size:1.7rem;line-height:2.2;color:#444;margin-top:20px;white-space:pre-line}
 
-/* ── COMPANY ── */
+/* COMPANY */
 #company{background:#fff}
 .company-hero img{width:100%;max-height:500px;object-fit:cover;display:block}
 .company-table{width:100%;border-collapse:collapse;margin-top:32px;font-size:1.5rem}
 .company-table th,.company-table td{padding:14px 20px;border-bottom:1px solid #e8e8e8;text-align:left}
 .company-table th{width:30%;font-weight:700;background:#f7f7f5}
-.company-link{background:var(--black);color:#fff;display:flex;justify-content:center;align-items:center;padding:28px;font-size:4rem;font-family:'Georgia',serif;letter-spacing:6px;margin-top:48px;transition:.2s}
+.company-link{background:var(--black);color:#fff;display:flex;justify-content:center;align-items:center;padding:28px;font-size:3.6rem;letter-spacing:6px;margin-top:48px;transition:.2s}
 .company-link:hover{opacity:.8}
 
-/* ── FOOTER ── */
+/* FOOTER */
 footer{background:#fff;border-top:1px solid #eee;padding:32px 5%}
 .footer-inner{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
 .footer-left p{font-size:1.2rem;line-height:2;color:#666}
@@ -106,26 +111,22 @@ footer{background:#fff;border-top:1px solid #eee;padding:32px 5%}
 .footer-nav ul li a:hover{opacity:.5}
 .copyright{font-size:1.1rem;color:#999;margin-top:8px}
 
-/* ── SP ── */
+/* SP */
 @media(max-width:768px){
   nav,.header-cta{display:none}
   .sp-menu-btn{display:flex}
   .hero-main{font-size:5.5vw;letter-spacing:3px}
-  .hero-sub{font-size:3.5vw;letter-spacing:1px}
+  .hero-sub{font-size:3.5vw}
   section{padding:48px 0}
-  .sec-title .en{font-size:5.5vw}
   .about-text{font-size:4.5vw}
   .people-item,.people-item:nth-child(even){flex-direction:column}
   .people-item:nth-child(even) .people-img,.people-item:nth-child(even) .people-info{order:unset}
-  .people-img{flex:unset;width:100%;aspect-ratio:4/3}
+  .people-img{flex:unset;width:100%}
   .people-name{font-size:7vw}
   .jobs-grid{grid-template-columns:1fr}
   .msg-box{margin-top:0}
   .footer-inner{flex-direction:column}
-  .footer-nav ul{gap:16px}
 }
-
-/* SP MENU OVERLAY */
 .sp-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:200;flex-direction:column;justify-content:center;align-items:center;gap:32px}
 .sp-overlay.open{display:flex}
 .sp-overlay ul{list-style:none;text-align:center}
@@ -136,7 +137,6 @@ footer{background:#fff;border-top:1px solid #eee;padding:32px 5%}
 </head>
 <body>
 
-<!-- SP OVERLAY -->
 <div class="sp-overlay" id="spOverlay">
   <ul>
     <li><a href="#about" onclick="closeMenu()">私たちについて</a></li>
@@ -148,7 +148,6 @@ footer{background:#fff;border-top:1px solid #eee;padding:32px 5%}
   <a href="#jobs" class="sp-cta" onclick="closeMenu()">ENTRY</a>
 </div>
 
-<!-- HEADER -->
 <header>
   <div class="logo">
     <img src="https://d15i6141qknyey.cloudfront.net/uploads/company/logo_image/6384/05d35058-282c-4e01-b7bc-b661735a0423.png" alt="N-TECH">
@@ -169,7 +168,6 @@ footer{background:#fff;border-top:1px solid #eee;padding:32px 5%}
   </div>
 </header>
 
-<!-- HERO -->
 <section id="hero">
   <img class="hero-img" src="https://d15i6141qknyey.cloudfront.net/uploads/site/cover_image/6309/d0c4f542-fb60-489c-bcf8-a4b98a4bdb60.png" alt="Hero">
   <div class="hero-overlay">
@@ -179,7 +177,6 @@ footer{background:#fff;border-top:1px solid #eee;padding:32px 5%}
   <div class="scroll-down">SCROLL DOWN</div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="inner">
     <div class="sec-title">
@@ -195,7 +192,6 @@ footer{background:#fff;border-top:1px solid #eee;padding:32px 5%}
   </div>
 </section>
 
-<!-- PEOPLE -->
 <section id="people">
   <div class="inner">
     <div class="sec-title">
@@ -231,7 +227,6 @@ footer{background:#fff;border-top:1px solid #eee;padding:32px 5%}
   </div>
 </section>
 
-<!-- JOBS -->
 <section id="jobs">
   <div class="inner">
     <div class="sec-title">
@@ -239,9 +234,9 @@ footer{background:#fff;border-top:1px solid #eee;padding:32px 5%}
       <p class="ja">募集要項</p>
     </div>
     <div class="jobs-grid">
-      <!-- 施工管理 -->
-      <div class="job-card">
+      <a href="job-kanri.html" class="job-card">
         <div class="job-card-img">
+          <span class="job-label">正社員</span>
           <img src="https://d15i6141qknyey.cloudfront.net/uploads/job/image/14940/79188be5-21cc-4042-9b8f-6ed714e12a6c.png" alt="施工管理">
           <div class="job-name">
             <p class="job-name-en">Construction management</p>
@@ -255,10 +250,11 @@ footer{background:#fff;border-top:1px solid #eee;padding:32px 5%}
             <span>💴 月給27〜80万円</span>
           </div>
         </div>
-      </div>
-      <!-- 作業員 -->
-      <div class="job-card">
+        <div class="job-arrow">→</div>
+      </a>
+      <a href="job-sagyoin.html" class="job-card">
         <div class="job-card-img">
+          <span class="job-label">正社員</span>
           <img src="https://d15i6141qknyey.cloudfront.net/uploads/job/image/14934/9fa1ff51-78eb-4eba-9e76-2cd42a2e8822.png" alt="作業員">
           <div class="job-name">
             <p class="job-name-en">Construction worker</p>
@@ -272,32 +268,14 @@ footer{background:#fff;border-top:1px solid #eee;padding:32px 5%}
             <span>💴 月給27〜60万円</span>
           </div>
         </div>
-      </div>
-      <!-- 営業 -->
-      <div class="job-card">
-        <div class="job-card-img">
-          <img src="https://d15i6141qknyey.cloudfront.net/uploads/site/cover_image/6309/d0c4f542-fb60-489c-bcf8-a4b98a4bdb60.png" alt="営業">
-          <div class="job-name">
-            <p class="job-name-en">Sales</p>
-            <p class="job-name-ja">営業職（BtoB）</p>
-          </div>
-        </div>
-        <div class="job-body">
-          <p class="job-desc">建設業BtoB営業。現場知識を活かして顧客折衝・提案。施工管理経験者など歓迎。</p>
-          <div class="job-meta">
-            <span>📍 東京都立川市</span>
-            <span>💴 月給27万円〜</span>
-          </div>
-        </div>
-      </div>
+        <div class="job-arrow">→</div>
+      </a>
     </div>
-    <a href="https://n-tech.shiraha.jp" target="_blank" class="jobs-cta">VIEW ALL JOBS →</a>
   </div>
 </section>
 
-<!-- MESSAGE -->
 <section id="message" style="padding:0 0 80px">
-  <div class="sec-title" style="padding-top:80px">
+  <div class="msg-sec-title">
     <p class="en">MESSAGE</p>
     <p class="ja">代表メッセージ</p>
   </div>
@@ -316,7 +294,6 @@ footer{background:#fff;border-top:1px solid #eee;padding:32px 5%}
   </div>
 </section>
 
-<!-- COMPANY -->
 <section id="company">
   <div class="inner">
     <div class="sec-title">
@@ -341,7 +318,6 @@ footer{background:#fff;border-top:1px solid #eee;padding:32px 5%}
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-left">
@@ -366,17 +342,12 @@ footer{background:#fff;border-top:1px solid #eee;padding:32px 5%}
 </footer>
 
 <script>
-function toggleMenu(){
-  document.getElementById('spOverlay').classList.toggle('open');
-}
-function closeMenu(){
-  document.getElementById('spOverlay').classList.remove('open');
-}
-// smooth scroll offset for fixed header
+function toggleMenu(){document.getElementById('spOverlay').classList.toggle('open')}
+function closeMenu(){document.getElementById('spOverlay').classList.remove('open')}
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
-    const target=document.querySelector(a.getAttribute('href'));
-    if(target){e.preventDefault();window.scrollTo({top:target.offsetTop-72,behavior:'smooth'});}
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();window.scrollTo({top:t.offsetTop-72,behavior:'smooth'});}
   });
 });
 </script>
