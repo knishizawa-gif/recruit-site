@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>株式会社N-TECH 採用サイト</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Yu Gothic Medium","游ゴシック Medium",YuGothic,sans-serif}
+:root{--black:#212121;--gray:#f7f7f5;--text:#333}
+html{scroll-behavior:smooth}
+body{font-size:16px;color:var(--black);line-height:1.8}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+
+/* ── HEADER ── */
+header{position:fixed;top:0;width:100%;height:72px;background:#fff;display:flex;justify-content:space-between;align-items:center;padding:0 3%;z-index:100;box-shadow:0 1px 6px rgba(0,0,0,.08)}
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{height:44px;object-fit:contain}
+.logo span{font-weight:700;font-size:1.5rem}
+nav ul{display:flex;gap:32px;list-style:none}
+nav ul li a{font-weight:700;font-size:1.4rem;letter-spacing:2px;transition:.2s}
+nav ul li a:hover{opacity:.5}
+.header-cta{background:var(--black);color:#fff;padding:0 28px;height:72px;display:flex;align-items:center;font-weight:700;font-size:1.6rem;letter-spacing:2px;transition:.2s;white-space:nowrap}
+.header-cta:hover{opacity:.8}
+.sp-menu-btn{display:none;background:var(--black);width:56px;height:72px;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:6px}
+.sp-menu-btn span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+
+/* ── HERO ── */
+#hero{position:relative;margin-top:72px}
+.hero-img{width:100%;height:calc(100vh - 72px);object-fit:cover;display:block}
+.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,.35);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 5%}
+.hero-main{color:#fff;font-size:4rem;font-weight:700;letter-spacing:8px;text-shadow:0 2px 12px rgba(0,0,0,.5);line-height:1.6;margin-bottom:16px}
+.hero-sub{color:#fff;font-size:1.6rem;font-weight:700;letter-spacing:3px;text-shadow:0 2px 8px rgba(0,0,0,.4)}
+.scroll-down{position:absolute;bottom:0;left:50%;transform:translateX(-50%);background:var(--black);color:#fff;padding:12px 40px;font-size:1.4rem;letter-spacing:2px;font-family:'Georgia',serif}
+
+/* ── SECTION COMMON ── */
+section{padding:80px 0}
+.sec-title{text-align:center;margin-bottom:48px}
+.sec-title .en{font-size:2.8rem;font-family:'Georgia',serif;letter-spacing:7px}
+.sec-title .ja{font-size:1.4rem;font-weight:700;letter-spacing:3px;margin-top:8px;color:#666}
+.inner{width:88%;max-width:1100px;margin:0 auto}
+
+/* ── ABOUT ── */
+#about{background:#fff}
+.about-text{font-size:1.9rem;font-weight:700;line-height:2.2;text-align:center}
+
+/* ── PEOPLE ── */
+#people{background:var(--gray)}
+.people-list{display:flex;flex-direction:column;gap:72px}
+.people-item{display:flex;gap:5%;align-items:center}
+.people-item:nth-child(even) .people-img{order:2}
+.people-item:nth-child(even) .people-info{order:1}
+.people-img{flex:0 0 50%;aspect-ratio:4/3;overflow:hidden}
+.people-img img{width:100%;height:100%;object-fit:cover}
+.people-info{flex:1}
+.people-pos{font-size:1.7rem;font-weight:700;letter-spacing:2px}
+.people-join{font-size:1.1rem;font-weight:700;color:#777;margin-top:2px;letter-spacing:1px}
+.people-name{font-size:3rem;font-weight:700;letter-spacing:2px;line-height:1.8;margin-top:4px}
+.people-name-en{font-family:'Georgia',serif;font-size:1.2rem;letter-spacing:3px;color:#888;margin-top:2px}
+.people-desc{font-size:1.7rem;line-height:2;color:#444;margin-top:20px}
+
+/* ── JOBS ── */
+#jobs{background:#fff}
+.jobs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.job-card{box-shadow:0 0 8px rgba(0,0,0,.1);transition:.2s;cursor:pointer;position:relative;padding-bottom:60px}
+.job-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.15)}
+.job-card-img{position:relative}
+.job-card-img img{width:100%;height:260px;object-fit:cover;display:block}
+.job-name{position:absolute;bottom:0;left:0}
+.job-name-en{color:#fff;font-size:1.1rem;padding:0 20px 4px;letter-spacing:2px}
+.job-name-ja{background:var(--black);color:#fff;font-size:2.2rem;font-weight:700;padding:12px 20px;display:inline-block}
+.job-body{padding:20px 20px 0}
+.job-desc{font-size:1.4rem;line-height:1.9;color:#555}
+.job-meta{position:absolute;bottom:16px;left:20px;right:20px;display:flex;gap:16px;font-size:1.2rem;color:#444}
+.job-meta span{display:flex;align-items:center;gap:4px}
+.jobs-cta{background:var(--black);color:#fff;display:flex;justify-content:center;align-items:center;padding:20px;font-size:2.6rem;font-family:'Georgia',serif;letter-spacing:6px;margin-top:40px;width:85%;max-width:800px;margin-left:auto;margin-right:auto;transition:.2s}
+.jobs-cta:hover{opacity:.8}
+
+/* ── MESSAGE ── */
+#message{background:var(--gray);padding:0 0 80px}
+.msg-hero img{width:100%;max-height:520px;object-fit:cover;display:block}
+.msg-box{width:85%;max-width:1100px;margin:-60px auto 0;background:var(--gray);padding:48px 5%;position:relative;z-index:1}
+.msg-role{font-size:1.4rem;font-weight:700}
+.msg-name{font-size:2rem;font-weight:700;margin-top:4px}
+.msg-headline{font-size:2.4rem;font-weight:700;line-height:1.9;margin-top:24px}
+.msg-body{font-size:1.7rem;line-height:2.2;color:#444;margin-top:20px;white-space:pre-line}
+
+/* ── COMPANY ── */
+#company{background:#fff}
+.company-hero img{width:100%;max-height:500px;object-fit:cover;display:block}
+.company-table{width:100%;border-collapse:collapse;margin-top:32px;font-size:1.5rem}
+.company-table th,.company-table td{padding:14px 20px;border-bottom:1px solid #e8e8e8;text-align:left}
+.company-table th{width:30%;font-weight:700;background:#f7f7f5}
+.company-link{background:var(--black);color:#fff;display:flex;justify-content:center;align-items:center;padding:28px;font-size:4rem;font-family:'Georgia',serif;letter-spacing:6px;margin-top:48px;transition:.2s}
+.company-link:hover{opacity:.8}
+
+/* ── FOOTER ── */
+footer{background:#fff;border-top:1px solid #eee;padding:32px 5%}
+.footer-inner{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
+.footer-left p{font-size:1.2rem;line-height:2;color:#666}
+.footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.footer-logo img{height:36px;object-fit:contain}
+.footer-logo span{font-weight:700;font-size:1.4rem}
+.footer-nav ul{display:flex;gap:24px;list-style:none;flex-wrap:wrap}
+.footer-nav ul li a{font-size:1.4rem;font-weight:700}
+.footer-nav ul li a:hover{opacity:.5}
+.copyright{font-size:1.1rem;color:#999;margin-top:8px}
+
+/* ── SP ── */
+@media(max-width:768px){
+  nav,.header-cta{display:none}
+  .sp-menu-btn{display:flex}
+  .hero-main{font-size:5.5vw;letter-spacing:3px}
+  .hero-sub{font-size:3.5vw;letter-spacing:1px}
+  section{padding:48px 0}
+  .sec-title .en{font-size:5.5vw}
+  .about-text{font-size:4.5vw}
+  .people-item,.people-item:nth-child(even){flex-direction:column}
+  .people-item:nth-child(even) .people-img,.people-item:nth-child(even) .people-info{order:unset}
+  .people-img{flex:unset;width:100%;aspect-ratio:4/3}
+  .people-name{font-size:7vw}
+  .jobs-grid{grid-template-columns:1fr}
+  .msg-box{margin-top:0}
+  .footer-inner{flex-direction:column}
+  .footer-nav ul{gap:16px}
+}
+
+/* SP MENU OVERLAY */
+.sp-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:200;flex-direction:column;justify-content:center;align-items:center;gap:32px}
+.sp-overlay.open{display:flex}
+.sp-overlay ul{list-style:none;text-align:center}
+.sp-overlay ul li{margin:20px 0}
+.sp-overlay ul li a{color:#fff;font-size:4.5vw;font-weight:700;letter-spacing:3px}
+.sp-overlay .sp-cta{background:#fff;color:var(--black);font-weight:700;padding:4% 16%;font-size:4.5vw;margin-top:16px}
+</style>
+</head>
+<body>
+
+<!-- SP OVERLAY -->
+<div class="sp-overlay" id="spOverlay">
+  <ul>
+    <li><a href="#about" onclick="closeMenu()">私たちについて</a></li>
+    <li><a href="#people" onclick="closeMenu()">社員紹介</a></li>
+    <li><a href="#jobs" onclick="closeMenu()">募集要項</a></li>
+    <li><a href="#message" onclick="closeMenu()">メッセージ</a></li>
+    <li><a href="#company" onclick="closeMenu()">会社概要</a></li>
+  </ul>
+  <a href="#jobs" class="sp-cta" onclick="closeMenu()">ENTRY</a>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <img src="https://d15i6141qknyey.cloudfront.net/uploads/company/logo_image/6384/05d35058-282c-4e01-b7bc-b661735a0423.png" alt="N-TECH">
+    <span>株式会社N-TECH 採用サイト</span>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#about">私たちについて</a></li>
+      <li><a href="#people">社員紹介</a></li>
+      <li><a href="#jobs">募集要項</a></li>
+      <li><a href="#message">メッセージ</a></li>
+      <li><a href="#company">会社概要</a></li>
+    </ul>
+  </nav>
+  <a href="#jobs" class="header-cta">ENTRY</a>
+  <div class="sp-menu-btn" id="menuBtn" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="hero">
+  <img class="hero-img" src="https://d15i6141qknyey.cloudfront.net/uploads/site/cover_image/6309/d0c4f542-fb60-489c-bcf8-a4b98a4bdb60.png" alt="Hero">
+  <div class="hero-overlay">
+    <p class="hero-main">未来は働く会社で変わる。<br>あなたの成長、全力支援。</p>
+    <p class="hero-sub">手にいれませんか？技術と資格。知識と経験。多様性と働きやすい環境。</p>
+  </div>
+  <div class="scroll-down">SCROLL DOWN</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="inner">
+    <div class="sec-title">
+      <p class="en">ABOUT US</p>
+      <p class="ja">私たちについて</p>
+    </div>
+    <p class="about-text">
+      あと施工アンカー工事の専門業者から総合建設業へ。<br>
+      2004年の創業以来、躯体補強・補修工事を軸に発展。<br>
+      工事部・施工管理部・営業部・総務部が連携し、<br>
+      管理から施工までワンストップで対応できる建設会社です。
+    </p>
+  </div>
+</section>
+
+<!-- PEOPLE -->
+<section id="people">
+  <div class="inner">
+    <div class="sec-title">
+      <p class="en">PEOPLE</p>
+      <p class="ja">社員紹介</p>
+    </div>
+    <ul class="people-list">
+      <li class="people-item">
+        <div class="people-img">
+          <img src="https://d15i6141qknyey.cloudfront.net/uploads/job/image/14934/9fa1ff51-78eb-4eba-9e76-2cd42a2e8822.png" alt="社員A">
+        </div>
+        <div class="people-info">
+          <p class="people-pos">工事部　作業員</p>
+          <p class="people-join">2020年入社</p>
+          <p class="people-name">田中 一郎</p>
+          <p class="people-name-en">Ichiro Tanaka</p>
+          <p class="people-desc">未経験からスタートして4年。今では職長として現場を仕切っています。資格取得も全額会社負担で、毎年着実に給与が上がっているのが実感できます。</p>
+        </div>
+      </li>
+      <li class="people-item">
+        <div class="people-img">
+          <img src="https://d15i6141qknyey.cloudfront.net/uploads/job/image/14940/79188be5-21cc-4042-9b8f-6ed714e12a6c.png" alt="社員B">
+        </div>
+        <div class="people-info">
+          <p class="people-pos">施工管理部　主任</p>
+          <p class="people-join">2018年入社</p>
+          <p class="people-name">山田 花子</p>
+          <p class="people-name-en">Hanako Yamada</p>
+          <p class="people-desc">職人経験を活かして施工管理へ転向。現場と管理の両方がわかるので、職人さんとの信頼関係も築きやすい。公共工事の元請け管理にやりがいを感じています。</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- JOBS -->
+<section id="jobs">
+  <div class="inner">
+    <div class="sec-title">
+      <p class="en">REQUIREMENTS</p>
+      <p class="ja">募集要項</p>
+    </div>
+    <div class="jobs-grid">
+      <!-- 施工管理 -->
+      <div class="job-card">
+        <div class="job-card-img">
+          <img src="https://d15i6141qknyey.cloudfront.net/uploads/job/image/14940/79188be5-21cc-4042-9b8f-6ed714e12a6c.png" alt="施工管理">
+          <div class="job-name">
+            <p class="job-name-en">Construction management</p>
+            <p class="job-name-ja">建設施工管理</p>
+          </div>
+        </div>
+        <div class="job-body">
+          <p class="job-desc">公共工事・耐震補強・躯体工事などの施工管理業務。職人経験者からの転向も歓迎。年間休日128日。</p>
+          <div class="job-meta">
+            <span>📍 東京都立川市</span>
+            <span>💴 月給27〜80万円</span>
+          </div>
+        </div>
+      </div>
+      <!-- 作業員 -->
+      <div class="job-card">
+        <div class="job-card-img">
+          <img src="https://d15i6141qknyey.cloudfront.net/uploads/job/image/14934/9fa1ff51-78eb-4eba-9e76-2cd42a2e8822.png" alt="作業員">
+          <div class="job-name">
+            <p class="job-name-en">Construction worker</p>
+            <p class="job-name-ja">建設作業員</p>
+          </div>
+        </div>
+        <div class="job-body">
+          <p class="job-desc">あと施工アンカー工事をはじめ、多能工として幅広いスキルが身につく。未経験・経験者ともに歓迎。</p>
+          <div class="job-meta">
+            <span>📍 東京都立川市</span>
+            <span>💴 月給27〜60万円</span>
+          </div>
+        </div>
+      </div>
+      <!-- 営業 -->
+      <div class="job-card">
+        <div class="job-card-img">
+          <img src="https://d15i6141qknyey.cloudfront.net/uploads/site/cover_image/6309/d0c4f542-fb60-489c-bcf8-a4b98a4bdb60.png" alt="営業">
+          <div class="job-name">
+            <p class="job-name-en">Sales</p>
+            <p class="job-name-ja">営業職（BtoB）</p>
+          </div>
+        </div>
+        <div class="job-body">
+          <p class="job-desc">建設業BtoB営業。現場知識を活かして顧客折衝・提案。施工管理経験者など歓迎。</p>
+          <div class="job-meta">
+            <span>📍 東京都立川市</span>
+            <span>💴 月給27万円〜</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="https://n-tech.shiraha.jp" target="_blank" class="jobs-cta">VIEW ALL JOBS →</a>
+  </div>
+</section>
+
+<!-- MESSAGE -->
+<section id="message" style="padding:0 0 80px">
+  <div class="sec-title" style="padding-top:80px">
+    <p class="en">MESSAGE</p>
+    <p class="ja">代表メッセージ</p>
+  </div>
+  <div class="msg-hero">
+    <img src="https://d15i6141qknyey.cloudfront.net/uploads/medium/company_overview_pc_image/136/b237039c-24bd-46aa-bd9f-f1ce2cefcb4d.png" alt="Message">
+  </div>
+  <div class="msg-box">
+    <p class="msg-role">代表取締役</p>
+    <p class="msg-name">西澤 一秀</p>
+    <p class="msg-headline">当社で社会のインフラや街の安全を守りながら、<br>自分のキャリア形成の土台を築きませんか？</p>
+    <p class="msg-body">弊社は、現在の代表者の私が建設現場で「あと施工アンカー」の施工職人としてキャリアをスタートしたことに端を発します。創業以来約20年が経過し、あと施工アンカー工事に留まらず、多能工として数多くの建設技術を習得してまいりました。
+
+建設業界のイメージは変わりつつあります。一度技術や資格を習得すれば、それは一生ものの「手に職」となります。弊社はこれからも「ホワイト化」を推進し、社員一人ひとりが自身のキャリアと生活の質の向上を目指せる環境を築いてまいります。
+
+ぜひ弊社でキャリアを築き、あなたの成長と経験に役立てていただければ幸いです。</p>
+  </div>
+</section>
+
+<!-- COMPANY -->
+<section id="company">
+  <div class="inner">
+    <div class="sec-title">
+      <p class="en">COMPANY</p>
+      <p class="ja">会社概要</p>
+    </div>
+    <div class="company-hero">
+      <img src="https://d15i6141qknyey.cloudfront.net/uploads/medium/company_overview_pc_image/136/b237039c-24bd-46aa-bd9f-f1ce2cefcb4d.png" alt="Company">
+    </div>
+    <table class="company-table">
+      <tr><th>会社名</th><td>株式会社N-TECH</td></tr>
+      <tr><th>代表者</th><td>西澤 一秀</td></tr>
+      <tr><th>設立</th><td>2004年10月1日</td></tr>
+      <tr><th>資本金</th><td>2,000万円</td></tr>
+      <tr><th>従業員数</th><td>15名</td></tr>
+      <tr><th>事業内容</th><td>耐震補強工事・解体工事・総合建設業</td></tr>
+      <tr><th>所在地</th><td>〒190-0033 東京都立川市一番町6-29-10</td></tr>
+      <tr><th>電話番号</th><td>042-843-9738</td></tr>
+      <tr><th>Webサイト</th><td><a href="https://www.n-tech.bz/" target="_blank" style="color:#0b9974;text-decoration:underline">https://www.n-tech.bz/</a></td></tr>
+    </table>
+    <a href="https://www.n-tech.bz/" target="_blank" class="company-link">COMPANY SITE →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-logo">
+        <img src="https://d15i6141qknyey.cloudfront.net/uploads/company/logo_image/6384/05d35058-282c-4e01-b7bc-b661735a0423.png" alt="N-TECH">
+        <span>株式会社N-TECH 採用サイト</span>
+      </div>
+      <p>〒190-0033 東京都立川市一番町6-29-10</p>
+      <p>Tel: 042-843-9738</p>
+      <p class="copyright">© 株式会社N-TECH All rights reserved.</p>
+    </div>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="#about">私たちについて</a></li>
+        <li><a href="#people">社員紹介</a></li>
+        <li><a href="#jobs">募集要項</a></li>
+        <li><a href="#message">メッセージ</a></li>
+        <li><a href="#company">会社概要</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('spOverlay').classList.toggle('open');
+}
+function closeMenu(){
+  document.getElementById('spOverlay').classList.remove('open');
+}
+// smooth scroll offset for fixed header
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const target=document.querySelector(a.getAttribute('href'));
+    if(target){e.preventDefault();window.scrollTo({top:target.offsetTop-72,behavior:'smooth'});}
+  });
+});
+</script>
+</body>
+</html>
