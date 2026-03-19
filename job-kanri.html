@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>建設施工管理 | 株式会社N-TECH 採用サイト</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Yu Gothic Medium","游ゴシック Medium",YuGothic,sans-serif}
+:root{--black:#212121;--gray:#f7f7f5}
+body{font-size:16px;color:var(--black);line-height:1.8}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+
+/* HEADER */
+header{position:fixed;top:0;width:100%;height:72px;background:#fff;display:flex;justify-content:space-between;align-items:center;padding:0 3%;z-index:100;box-shadow:0 1px 6px rgba(0,0,0,.08)}
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{height:44px;object-fit:contain}
+.logo span{font-weight:700;font-size:1.5rem}
+.back-btn{background:var(--black);color:#fff;padding:0 24px;height:72px;display:flex;align-items:center;font-weight:700;font-size:1.4rem;letter-spacing:1px;transition:.2s;white-space:nowrap}
+.back-btn:hover{opacity:.8}
+
+/* HERO */
+.hero{position:relative;margin-top:72px}
+.hero img{width:100%;height:55vh;object-fit:cover;display:block;object-position:center}
+.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,.48);display:flex;flex-direction:column;justify-content:flex-end;padding:40px 6%}
+.job-label{background:#fff;color:var(--black);font-size:1.2rem;font-weight:700;padding:4px 12px;display:inline-block;margin-bottom:10px}
+.job-title-en{color:rgba(255,255,255,.8);font-size:1.2rem;letter-spacing:3px;margin-bottom:6px}
+.job-title-ja{color:#fff;font-size:4.2rem;font-weight:700;letter-spacing:3px;line-height:1.3}
+
+/* ENTRY BTN */
+.entry-btn{display:block;background:var(--black);color:#fff;text-align:center;padding:22px;font-size:2.2rem;font-weight:700;letter-spacing:4px;transition:.2s;cursor:pointer;border:none;width:100%}
+.entry-btn:hover{opacity:.8}
+
+/* CONTAINER */
+.container{width:90%;max-width:960px;margin:0 auto;padding:56px 0 80px}
+
+/* SECTION */
+.sec{margin-bottom:52px}
+.sec h2{font-size:2rem;font-weight:700;border-left:4px solid var(--black);padding-left:16px;margin-bottom:20px;line-height:1.4}
+.sec p{font-size:1.6rem;line-height:2.1;color:#444;white-space:pre-wrap;word-break:break-all}
+
+/* TABLE */
+.info-table{width:100%;border-collapse:collapse;font-size:1.55rem}
+.info-table tr{border-bottom:2px solid #f7f7f5}
+.info-table tr:last-child{border-bottom:none}
+.info-table th{width:22%;font-weight:700;padding:14px 16px 14px 0;text-align:left;vertical-align:top;color:var(--black)}
+.info-table td{padding:14px 16px;color:#444;vertical-align:top;white-space:pre-wrap;word-break:break-all}
+
+/* COMPANY TABLE */
+.company-box{border:2px solid #f7f7f5;padding:20px 24px;margin-top:0}
+.company-box table{width:100%;border-collapse:collapse;font-size:1.55rem}
+.company-box table tr{border-bottom:2px solid #f7f7f5}
+.company-box table tr:last-child{border-bottom:none}
+.company-box table th{width:22%;font-weight:700;padding:12px 16px 12px 0;text-align:left;vertical-align:top}
+.company-box table td{padding:12px 16px;color:#444;vertical-align:top}
+
+/* OTHER JOBS */
+.other-jobs{background:var(--gray);padding:48px 0}
+.other-jobs .inner{width:90%;max-width:960px;margin:0 auto}
+.other-jobs h2{text-align:center;margin-bottom:32px}
+.other-jobs h2 .en{font-size:2.4rem;letter-spacing:6px;display:block}
+.other-jobs h2 .ja{font-size:1.4rem;font-weight:700;letter-spacing:3px;color:#666;display:block;margin-top:6px}
+.job-card{display:block;box-shadow:0 0 6px rgba(0,0,0,.1);transition:.3s;background:#fff}
+.job-card:hover{box-shadow:0 4px 18px rgba(0,0,0,.15)}
+.job-card-img{position:relative}
+.job-card-img img{width:100%;height:220px;object-fit:cover;display:block}
+.job-name{position:absolute;bottom:0;left:0}
+.job-name-en{color:#fff;font-size:1.1rem;padding:0 16px 4px;letter-spacing:2px;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+.job-name-ja{background:var(--black);color:#fff;font-size:2rem;font-weight:700;padding:10px 16px;display:inline-block}
+.job-body{padding:18px}
+.job-body p{font-size:1.4rem;line-height:1.9;color:#555}
+.job-meta{display:flex;gap:12px;font-size:1.2rem;color:#444;margin-top:10px;flex-wrap:wrap}
+
+/* BACK BTN */
+.back-link{display:block;border:3px solid var(--black);text-align:center;padding:18px;font-size:2rem;font-weight:700;letter-spacing:3px;margin-top:48px;transition:.2s;width:90%;max-width:960px;margin-left:auto;margin-right:auto}
+.back-link:hover{opacity:.7}
+
+footer{background:#fff;border-top:1px solid #eee;padding:24px 5%;font-size:1.2rem;color:#666;text-align:center}
+
+/* NOTICE */
+.notice{font-size:1.3rem;font-weight:700;margin-top:12px;color:#333}
+
+@media(max-width:768px){
+  .job-title-ja{font-size:6vw}
+  .logo span{display:none}
+  .info-table,.info-table tbody,.info-table tr,.info-table th,.info-table td{display:block;width:100%}
+  .info-table th{border-bottom:none;padding:12px 0 0;font-size:1.5rem}
+  .info-table td{padding:4px 0 12px;font-size:1.4rem}
+  .company-box table,.company-box table tbody,.company-box table tr,.company-box table th,.company-box table td{display:block;width:100%}
+  .company-box table th{border-bottom:none;padding:10px 0 0}
+  .company-box table td{padding:4px 0 10px}
+  .entry-btn{font-size:4.5vw;padding:5vw}
+  .back-link{font-size:3.6vw;padding:4vw}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="https://d15i6141qknyey.cloudfront.net/uploads/company/logo_image/6384/05d35058-282c-4e01-b7bc-b661735a0423.png" alt="N-TECH">
+    <span>株式会社N-TECH 採用サイト</span>
+  </div>
+  <a href="index.html" class="back-btn">← 求人トップへ戻る</a>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <img src="https://d15i6141qknyey.cloudfront.net/uploads/job/image/14940/79188be5-21cc-4042-9b8f-6ed714e12a6c.png" alt="建設施工管理">
+  <div class="hero-overlay">
+    <span class="job-label">正社員</span>
+    <p class="job-title-en">Construction management</p>
+    <p class="job-title-ja">建設施工管理</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- 応募ボタン（上） -->
+  <div class="sec">
+    <a href="mailto:info@n-tech.bz" class="entry-btn">応募する</a>
+    <p class="notice">※この画面で表示される求人情報は雇用契約書ではありません。採用時には必ず、書面により労働条件の明示を受けてください。</p>
+  </div>
+
+  <!-- 求人詳細テーブル -->
+  <div class="sec">
+    <h2>募集内容</h2>
+    <table class="info-table">
+      <tr><th>職種名</th><td>建設施工管理</td></tr>
+      <tr><th>仕事内容</th><td>公共工事、耐震補強工事・躯体工事・解体工事・各種専門工事等の施工管理業務をお願い致します。
+現場の職人さんの手配及び工程管理・安全管理・原価管理を担当していただきます。
+評価制度もしっかりしているので、能力に応じて昇給は毎年あります。
+初年度の給与設定は資格or経験年数を考慮して話し合いで決定したいと思います。
+現場には直行直帰でクラウドで日報管理しますので通勤に余計な時間はかかりません。
+公共工事では元請け工事の施工管理、下請け工事では当社の職人や協力業者の職人さんの手配を担当してもらうなどなので、職人経験のある人でこれから施工管理になりたい人も募集中です。
+会社は小規模ですが、DX化が進んでおり古い体質の建設会社ではないので、若い方も活躍の場があります。
+小規模な会社なので、会社と共に成長しつつ色々な事にチャレンジしていける人を募集致します。
+
+変更の範囲：変更なし</td></tr>
+      <tr><th>必要な免許・スキル</th><td>未経験可
+資格支援　全額会社負担</td></tr>
+      <tr><th>歓迎するスキル</th><td>1級または2級建築施工管理技士有資格者
+1級または2級土木施工管理技士有資格者
+1級または2級建築士有資格者
+建築CADのスキル、普通自動車免許　有尚可</td></tr>
+      <tr><th>勤務地</th><td>東京都立川市一番町6-29-10</td></tr>
+      <tr><th>転勤の可能性</th><td>なし</td></tr>
+      <tr><th>勤務形態</th><td>正社員</td></tr>
+      <tr><th>給与</th><td>【月給】 270,000円 〜 800,000円</td></tr>
+      <tr><th>給与備考</th><td>経験者・有資格者　応相談
+１級建築施工管理技士　月給45万以上
+２級建築施工管理技士　月給35万以上</td></tr>
+      <tr><th>契約期間</th><td>期間の定め無し</td></tr>
+      <tr><th>契約更新の可能性</th><td>あり（条件付きで更新あり）
+契約更新判断基準：期間満了時の業務量、業務遂行能力や態度等、会社経営状況による</td></tr>
+      <tr><th>試用期間</th><td>あり（6ヶ月・給与は本採用時と同額）</td></tr>
+      <tr><th>勤務時間</th><td>8:00〜17:00</td></tr>
+      <tr><th>時間外労働</th><td>有り　月20時間位</td></tr>
+      <tr><th>休日・休暇</th><td>週休2日制、土日祝日
+夏季休暇、GW、年末年始
+年間休日128日</td></tr>
+      <tr><th>待遇・福利厚生</th><td>◇交通費全額支給
+◇社用車直行直帰
+◇有給休暇
+◇退職金（中退共）
+◇入院保険
+◇資格取得全額支給
+◇独立支援制度有</td></tr>
+      <tr><th>社会保険</th><td>各種社会保険完備
+健康保険・労災保険・雇用保険・厚生年金</td></tr>
+      <tr><th>選考方法</th><td>1. DM・書類選考
+2. 最終面接</td></tr>
+      <tr><th>屋内の受動喫煙対策</th><td>有り（喫煙室有り）</td></tr>
+    </table>
+  </div>
+
+  <!-- 応募ボタン（下） -->
+  <a href="mailto:info@n-tech.bz" class="entry-btn">応募する</a>
+  <p class="notice" style="margin-top:12px">※この画面で表示される求人情報は雇用契約書ではありません。採用時には必ず、書面により労働条件の明示を受けてください。</p>
+
+  <!-- 会社情報 -->
+  <div class="sec" style="margin-top:48px">
+    <h2>会社情報</h2>
+    <div class="company-box">
+      <table>
+        <tr><th>会社名</th><td>株式会社N-TECH</td></tr>
+        <tr><th>所在地</th><td>東京都立川市一番町6-29-10</td></tr>
+        <tr><th>電話番号</th><td>042-843-9738</td></tr>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- 他の求人 -->
+<div class="other-jobs">
+  <div class="inner">
+    <h2>
+      <span class="en">RECRUITMENT INFORMATION</span>
+      <span class="ja">株式会社N-TECHの採用・求人情報</span>
+    </h2>
+    <a href="job-sagyoin.html" class="job-card">
+      <div class="job-card-img">
+        <img src="https://d15i6141qknyey.cloudfront.net/uploads/job/image/14934/9fa1ff51-78eb-4eba-9e76-2cd42a2e8822.png" alt="建設作業員">
+        <div class="job-name">
+          <p class="job-name-en">正社員</p>
+          <p class="job-name-ja">建設作業員</p>
+        </div>
+      </div>
+      <div class="job-body">
+        <p>あと施工アンカーの取り付け業務をはじめ、多能工として幅広いスキルが身につきます。未経験歓迎。</p>
+        <div class="job-meta">
+          <span>📍 東京都立川市一番町6-29-10</span>
+          <span>💴 【月給】〜 600,000円</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- 戻るボタン -->
+<a href="index.html" class="back-link">← 株式会社N-TECH の採用・求人トップページへ戻る</a>
+
+<footer style="margin-top:48px">
+  © 株式会社N-TECH All rights reserved.
+</footer>
+
+</body>
+</html>
